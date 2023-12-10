@@ -1,0 +1,326 @@
+Q1. Wap  to find roots of quadratic equation
+# input
+
+a = int(input("enter value of a="))
+b = int(input("enter value of b="))
+c = int(input("enter value of c="))
+d = ((b**2)-4*a*c)*0.5
+x1 = -b+d/2*a
+x2 = -b-d/2*a
+if d > 0:
+    print("roots are real", x1 , x2)
+else:
+     print("roots are imaginary", x1 , x2)
+
+
+output:1
+enter value of a=1
+enter value of b=2
+enter value of c=3
+roots are imaginary -4.0 , 0.0
+
+
+output:2
+enter value of a= 1
+enter value of b=-5
+enter value of c= 5
+roots are real 6.25 , 3.75
+
+
+
+Q2.Wap to accept a number 'n' and
+# a. Check if 'n' is prime .
+def prime_or_not(n):
+    if n>1:
+        for i in range(2,n+1):
+            if n%i==0:
+                print(n, "is not prime number")
+                break
+        else:
+            print(n, "is prime number ")
+n = int(input("enter a number "))
+print(prime_or_not(n))
+
+
+# b. Generate all prime number till "n" . 
+
+def prime_or_not(n):
+    for i in range(1,n+1):
+        if i>1:
+            for j in range(2,i):
+                if i%j==0:
+                    print(i, "is not prime number ")
+                    break
+            else:
+                print(i,"is prime number ")
+n = int(input("enter a number "))
+print(prime_or_not(n))
+
+# c. Generate first 'n' prime number .
+
+
+
+Q3. Wap to create a pyramid of charcter "*" and reverse pyramid.
+r = 6
+for i in range(1,r):
+    print("   "*(r-i), end = " " )
+    for j in range(1,2*i):
+        print("*" , end= " " )
+    print()
+for i in range(r,0,-1):
+    print("   "*(r-i), end = " " )
+    for j in range(1,2*i):
+        print("*" , end= " " )
+    print()
+
+Q4. Wap that accepts a character and perform the following:
+
+# a. print whether the character is a letter or numeric digits or a special character ...
+
+character= input("enter a character = ")
+if character>="A" and character<="Z" or character>="a" and character<="z":
+  print(character, "character is letter..")
+elif character>="0" and character<="9":
+  print(character,"is numeric digit")
+else:
+  print(character,"is special character. ")
+
+
+#b . If character is letter , print whether the letter is upppercase or lowercase...
+
+character= input("enter a character = ")
+if character>="A" and character<="Z":
+  print(character, "is uppercase letter ")
+elif character>="a" and character<="z":
+  print(character, "is lowercase letter .")
+else:
+  print("enter a valid letter ")
+
+
+
+#c.if the character is numeric digit, printts its name in text.
+
+num = int(input("enter a number from 0 to 9 . = "))
+dict1 = {0:"zer0", 1:"one", 2:"two", 3:"three",4:"four", 5:"five", 6:"six", 7:"seven", 8:"eight", 9:"nine"}
+print(dict1[num])
+
+Q5. Wap to perform the following operation on a string .
+
+# a. Find the frequency of a character in a string
+name=input("enter a name = ")
+freq = input("enter character which you want frequency= ")
+print(name.count(freq))
+
+
+
+#b. replace a charater by another character in a string.
+
+name = input("enter a name= ")
+cur_let= input("enter a letter which you want to replace= ")
+rep_let=input("enter letter to which letter is replaced =  ")
+print(name.replace(cur_let,rep_let))
+
+
+
+#c. remove first occurrence of a character from string
+
+name = input("enter a character= ")
+print(name[1: ])
+
+
+
+#d.Remove all occurrences of a character from a string
+
+name = list(input("enter a character= "))
+name.clear()
+print(name)
+
+
+Q6.Wap to swap the first n character of two string.
+
+string1 = input("enter a string ")
+string2 = input("enter a another string")
+n = int(input("enter value of n"))
+s1 = string1[ :n]
+s2 = string2[ :n]
+print(string1.replace(s1,s2))
+print(string2.replace(s2,s1))
+
+OUTPUT
+
+enter a string PRAJJWAL MISHRA
+enter a another stringPrajjwl mishra
+enter value of n3
+Prajjwal MIshra
+Prajjwal Mishra 
+
+Q7. Write a function that accepts two strings and returns the indices of all the occurrences of the second string in the first string as a list. If the second string is not present in the first string then it should return -1
+
+def first_difference(str1, str2):
+    if str1 == str2:
+        return -1
+    else:
+        for str1, str2 in zip(str1, str2):
+            if str1 != str2:
+                return str1
+string1 = input("Enter first string:")
+string2 = input("Enter second string:")
+print(first_difference(string1, string2))
+
+OUTPUT
+
+Enter first string:bobby
+Enter second string:lobby
+b
+
+Q8. WAP to create a list of the cubes of only the even integers appearing in the input list (may have elements of other types also) using for loop and list comprehension.
+
+input_list = [1, 2, 3, 4, 'five', 6, 7, 8.0, 9, 10]
+cubes_of_even_numbers = [item ** 3 for item in input_list if isinstance(item, int) and item % 2 == 0]
+print(cubes_of_even_numbers)
+
+OUTPUT
+[8, 64, 216, 1000]
+
+Q9. WAp To read a file and 
+
+a . Print total number of character ,word and line in file .
+
+def filehandling(): 
+ f= open("C:\Users\Prajjwal Mishra\OneDrive\Desktop\prajjwalpython\Prajjwalpython.txt","r")
+ data =f.read()
+ f.close()
+ 
+ words = data.split()
+ lines=len(data.splitlines())
+ print("lines in text file is:",lines)
+ print("Number of words in text file :", len(words))
+ print("no of character in text file",len(data))
+filehandling()
+def freq():
+ f= open("C:\Users\Prajjwal Mishra\OneDrive\Desktop\prajjwalpython\prajjwalpython.txt","r")
+ data =f.read()
+ f.close()
+ 
+ d= {}
+ for i in data:
+ b =data.count(i) 
+ d[i]=b 
+ print(d)
+freq()
+def reverse_words ():
+ f= open("C:\Users\Prajjwal Mishra\OneDrive\Desktop\prajjwalpython\prajjwalpython.txt","r")
+ data1 = f.read()
+ data2 = data1.split()
+ reverse = data2[ ::-1]
+ print( "reversed words : "," ".join(reverse))
+reverse_words()
+def file1_and_file2():
+ 
+ 
+ f= open("C:\Users\Prajjwal Mishra\OneDrive\Desktop\prajjwalpython\prajjwalpython.txt","r")
+ f3= open("C:\Users\Prajjwal Mishra\OneDrive\Desktop\prajjwalpython\prajjwal\thon.txt","w")
+ f4= open("C:\Users\\Prajjwal Mishra\OneDrive\Desktop\prajjwalpython\prajjwal\python.txt","w") 
+ lines = f.readlines()
+ for i in range(len(lines)):
+ if i%2==0:
+ f3.write(lines[i])
+ else:
+ f4.write(lines[i])
+ 
+ f.close()
+ f3.close()
+ f4.close()
+ file5 = open("C:\Users\Prajjwal Mishra\OneDrive\Desktop\prajjwalpython\prajjwalpython.txt","r")
+ file6 =open("C:\Users\Prajjwal Mishra\OneDrive\Desktop\prajjwalpython\prajjwalpython.txt","r")
+ print("even lines : ",file5.read())
+ print("odd lines : " ,file6.read())
+ file5.close()
+ file6.close()
+file1_and_file2() 
+
+
+
+
+Q10 . Write  a function that prints a dictionary where keys are between 1 and 5 and the values are cubes of keys.
+
+num = dict()
+for i in range(1,6):
+   num[i]= i**3
+print(dict(num))
+
+
+ouptput:-
+{1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+
+
+
+Q11. consider a tuple t1 = (1,2,5,7,9,2,4,6,8,10) . Wap to perform the following operation .
+A. Print half of the value of the tuple in one line and other half in the next line ..
+
+t1 = (1,2,5,7,9,2,4,6,8,10) 
+len_tup = len(t1)//2
+first_half = t1[ :len_tup]
+print("first half of tuple is :- ", first_half)
+last_half = t1[len_tup: ]
+print("last half of tuple is :-", last_half)
+
+Output :- 
+first half of tuple is :-  (1, 2, 5, 7, 9)
+last half of tuple is :- (2, 4, 6, 8, 10)
+
+
+B. Print another tuple whose value are even number in the given tuple ..
+
+t1 =  (1,2,5,7,9,2,4,6,8,10)
+even_numbers = tuple(num for num in t1 if num % 2 == 0)
+print("Tuple with even numbers:", even_numbers)
+
+OUTPUT
+Tuple with even numbers: (2, 2, 4, 6, 8, 10)
+
+C. Concatenate a tuple t2=(11,13,15) with t1.
+
+t1= (1,2,5,7,9,2,4,6,8,10)
+t2 = (11,13,15)
+t3 = t1+t2
+print(t3)
+
+Output:-
+(1, 2, 5, 7, 9, 2, 4, 6, 8, 10, 11, 13, 15)
+ 
+
+D. Return Maximum and Minimum value of tuple .
+
+t1= (1,2,5,7,9,2,4,6,8,10,11,13,15)
+ma_x = max(t1)
+mi_n = min(t1)
+print(ma_x, ",is Maximum Value of Tuple")
+print(mi_n,",is  Minimum  Value of tuple" )
+
+Output:-
+
+15 ,is Maximum Value of Tuple
+1 ,is  Minimum  Value of tuple
+
+
+Q12. Wap to accept a name from user. Raise and handle appropiate exception if the text entered by the user contain digit and / or special character.
+
+name = input("Enter a name = ")
+try:
+for character in name:
+if character.isalpha() or character.isspace():
+continue
+else:
+raise Exception("Enter username contain digit or special character ")
+except:
+print("Entered name contain a digit or special character")
+
+
+Output
+case 1.
+Enter a name = 12
+Entered name contain a digit or special character
+
+case 2.
+Enter a name = Prajjwal Mishra
